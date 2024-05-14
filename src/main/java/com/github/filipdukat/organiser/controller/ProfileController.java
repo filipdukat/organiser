@@ -1,7 +1,7 @@
 package com.github.filipdukat.organiser.controller;
 
-import com.github.filipdukat.organiser.model.User;
-import com.github.filipdukat.organiser.service.UserService;
+import com.github.filipdukat.organiser.model.Profile;
+import com.github.filipdukat.organiser.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/profiles")
+public class ProfileController {
 
     @Autowired
-    private UserService userService;
+    private ProfileService profileService;
 
     @GetMapping
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public List<Profile> getAllProfiles(){
+        return profileService.getAllProfiles();
     }
 }
