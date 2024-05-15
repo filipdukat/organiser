@@ -27,4 +27,15 @@ public class TaskController {
         Task createdTask = taskService.createTask(taskCreateDTO);
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable("id") Long id){
+        taskService.deleteTaskById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{id}")
+    public Task getTaskById(@PathVariable("id") Long id) {
+        return taskService.getTaskById(id);
+    }
 }
